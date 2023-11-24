@@ -25,7 +25,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <MantineProvider defaultColorScheme="auto">
+      <MantineProvider defaultColorScheme="light">
         <Header/>
         <main>
           {routes}

@@ -1,13 +1,13 @@
 import React from "react";
 import { useState,useEffect } from "react";
 
-import { Data } from "../assets/Data";
+import { Data2 } from "../assets/Data2";
 
 import LineGraph from "./LineGraph";
 import { Group, Stack } from "@mantine/core";
 
 const WeatherGraph = props => {
-    const logs_data = Data.logs_data;
+    const logs_data = Data2.logs;
     
     const fetchWeatherData = async() =>{
         try{
@@ -29,9 +29,9 @@ const WeatherGraph = props => {
     // });
 
     const labels = logs_data.map((log) => log.DATE_TIME.slice(11,16));
-    const AmbTempData = logs_data.map((log) => log.DAILY_YIELD);
-    const IrraditonData = logs_data.map((log) => log.DAILY_YIELD);
-    const ModTempData = logs_data.map((log) => log.DAILY_YIELD);
+    const AmbTempData = logs_data.map((log) => log.AMBIENT_TEMPERATURE);
+    const IrraditonData = logs_data.map((log) => log.MODULE_TEMPERATURE);
+    const ModTempData = logs_data.map((log) => log.IRRADIATION);
     
     return (<>
         <Stack pb={20}>
